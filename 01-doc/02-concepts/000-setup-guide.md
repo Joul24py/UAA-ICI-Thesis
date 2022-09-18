@@ -69,7 +69,7 @@ pip install pyautogui
 
 After this, we will use this library to create a script in order to stop automatically and periodically the process that the OpenViBE designer does of reading data (because when the stop process is executed is when the CSV file is generated).
 
-First of all it's necessary to locate the coordinates where the button is in our screen. For that is used the following script:
+First of all it's necessary to locate the coordinates where the button is in our screen. For that is used the following script (which can be found also in this repository as the [00-mouse-position.py](https://github.com/Joul24py/UAA-ICI-Thesis/blob/main/02-code/02-code/00-mouse-position.py) file):
 
 ```python
 import pyautogui
@@ -82,7 +82,7 @@ time.sleep(10)
 print(pyautogui.position())
 ```
 
-Then, when we have this values, we can store them in ```x``` and ```y``` variables that we'll use in the following script. Now, when everything is ready to be executed, the headset connected, Emotiv running, OpenViBE fully connected and configured, it's time to run the following script:
+Then, when we have this values, we can store them in ```x``` and ```y``` variables that we'll use in the following script. Now, when everything is ready to be executed, the headset connected, Emotiv running, OpenViBE fully connected and configured, it's time to run the following script (which can be found also in this repository as the [01-run-update-stream.py](https://github.com/Joul24py/UAA-ICI-Thesis/blob/main/02-code/02-code/01-run-update-stream.py) file):
 
 ```python
 import pyautogui
