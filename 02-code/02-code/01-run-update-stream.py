@@ -8,7 +8,7 @@ y = 0
 time.sleep(10)
 pyautogui.moveTo(x, y)
 
-#The process will be okay while the mouse keeps on the indicated position 
+# The process will be okay while the mouse keeps on the indicated position 
 while(pyautogui.position() == (x, y)):
    pyautogui.click()
    time.sleep(1) # The CSV is getting updated each second
