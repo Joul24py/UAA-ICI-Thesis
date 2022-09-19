@@ -2,11 +2,11 @@
 
 As this project is based in the Emotiv headsets, it's necessary to download the appropiate software from the [Emotiv downloads](https://www.emotiv.com/emotiv-launcher/) official page, downloading the Emotiv Launcher as a first step.
 
-![](/01-doc/02-concepts/img/1.png)
+<img src="img/1.png" alt="Emotiv home page" style="height: 250px; display: block; margin-left: auto; margin-right: auto;">
 
 It's also neccesary to [register for an Emotiv ID](https://www.emotiv.com/my-account/).
 
-![](/01-doc/02-concepts/img/2.png)
+<img src="img/2.png" alt="Emotiv registration" style="height: 400px; display: block; margin-left: auto; margin-right: auto;">
 
 In a personal experience, I decided to install the entire offered software in the installation:
 
@@ -15,11 +15,11 @@ In a personal experience, I decided to install the entire offered software in th
 - EmotivPRO
 - EmotivBCI
 
-![](/01-doc/02-concepts/img/3.png)
+<img src="img/3.png" alt="Emotiv installation options" style="height: 85px; display: block; margin-left: auto; margin-right: auto;">
 
 After this, you should run the Emotiv Launcher with the neuroheadset correctly paired and connected via USB. It should appear as a possible connection when it's running the Emotiv Launcher.
 
-![](/01-doc/02-concepts/img/4.png)
+<img src="img/4.png" alt="Emotiv finding the headset" style="height: 400px; display: block; margin-left: auto; margin-right: auto;">
 
 Then it has to be correctly placed in order to detect efficiently the neural activity. Once it's done this, the Emotiv Setup is over, so now it's time to use the [CymatiCorp repository: Cykit](https://github.com/CymatiCorp/CyKit).
 
@@ -37,15 +37,15 @@ Once the first setup is done, it's necessary to make some changes to the suggest
 
 As this personal project needs the data recovered by the headset, it is necessary to get the data in any way. To do so, it should be added in the OpenViBE designer schema another element which can be found in the ```"File reading and writing"```. Inside of it, go to the ```"CSV"``` folder and drag and drop the ```"CSV File Writer"``` element into the schema.
 
-![](/01-doc/02-concepts/img/5.png)
+<img src="img/5.png" alt="Path to find the element in OpenViBE Designer" style="height: 210px; display: block; margin-left: auto; margin-right: auto;">
 
 It's necessary to connect the pink output arrow from the ```"Acquisition Client"``` to the pink input arrow from the new element.
 
-![](/01-doc/02-concepts/img/6.png)
+<img src="img/6.png" alt="OpenViBE Designer Schema" style="height: 200px; display: block; margin-left: auto; margin-right: auto;">
 
 It's also necessary to customize some elements when double click over the CSV File Writer element:
 
-![](/01-doc/02-concepts/img/7.png)
+<img src="img/7.png" alt="Configuring file reading and writing settings" style="height: 220px; display: block; margin-left: auto; margin-right: auto;">
 
 In the ```"Filename"``` field it will be the directory where the CSV file is going to be stored (it can be choose as a preference of the user and not necessary the same as this tutorial).
 
@@ -53,7 +53,7 @@ It's also necessary to mark as ```true``` in the ```"Append Data"``` field. Then
 
 Then, before to start the scenario, it's necessary to mark the ```"run the scenario in a loop"``` button because the software would create a CSV until the end of the experiment and personally I couldn't find an element that let me to the analysis live while the data recollection is in progress.
 
-![](/01-doc/02-concepts/img/8.png)
+<img src="img/8.png" alt="Looping the process" style="height: 90px; display: block; margin-left: auto; margin-right: auto;">
 
 This is not the only configuration that is needed to stream live the data while reading it from the headset. It's also needed to use the PyAutoGUI library from Python.
 
