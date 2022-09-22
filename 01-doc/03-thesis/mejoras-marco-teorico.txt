@@ -28,7 +28,19 @@
 - Hablar de Redes Neuronales
   - Definición matemática
 - Buscar alternativas para redes neuronales
+  - https://es.wikipedia.org/wiki/Red_neuronal_artificial
+  - https://es.wikipedia.org/wiki/Modelo_de_Hodgkin_y_Huxley
 - Buscar qué tanto me meteré a matemáticas (que sea lo más posible) (por lo menos veo que Tensores me servirán mucho, leer más de ellos)
+  - https://es.wikipedia.org/wiki/Matem%C3%A1ticas
+  - https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_param%C3%A9trica
+  - https://es.wikipedia.org/wiki/Tensor
+  - https://es.wikipedia.org/wiki/Espacio_vectorial
+  - https://es.wikipedia.org/wiki/Estructura_algebraica
+  - https://es.wikipedia.org/wiki/%C3%81lgebra_abstracta
+  - https://es.wikipedia.org/wiki/C%C3%A1lculo_vectorial
+  - https://es.wikipedia.org/wiki/Geometr%C3%ADa_diferencial
+  - https://es.wikipedia.org/wiki/Topolog%C3%ADa
+  - https://es.wikipedia.org/wiki/Topolog%C3%ADa_diferencial
 - Buscar modelos de redes neuronales y definirlas
 - Si no sale nada más, es momento de pasar al problema de investigación
 
