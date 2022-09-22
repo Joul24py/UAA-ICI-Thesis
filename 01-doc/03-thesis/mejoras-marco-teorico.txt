@@ -1,0 +1,40 @@
+------------------------------ Neuroanatomía ------------------------------
+- Buscar más autores que definan los lóbulos del cerebro para discutir las definiciones
+- Hablar del lóbulo insular
+- Hablar del lóbulo límbico
+- Formar una definición concisa de cada lóbulo al discutir distintas definiciones de los lóbulos
+- Hablar de las divisiones funcionales de las que habla Wikipedia (https://es.wikipedia.org/wiki/Cerebro_humano) (buscar más autores) (incluso con esto puedo conectar de la macro a la micro)
+- Posteriormente hablar de la microarquitectura: entrar a las definiciones de neuronas por Wikipedia y por otros libros que he encontrado
+- Entrar a fondo con neuronas (https://es.wikipedia.org/wiki/Neurona):
+  - Morfología
+  - Funciones
+  - Interacción entre neuronas
+  - Clasificación
+- Hablar también de las conexiones sinápticas
+- Si no sale nada más, empezar a hacer una conexión entre la actividad neuronal y la electroencefalografía
+
+------------------------------ Electroencefalografía ------------------------------
+- Definición de electroencefalografía (https://es.wikipedia.org/wiki/Electroencefalograf%C3%ADa)
+- Hablar de la actividad de fondo (u ondas encefálicas o eeg waves)
+- Hablar de los métodos de activación encefálica
+- Hablar de dispositivos con los que pueden hacerse estos estudios
+- Si no sale nada más, comentar que todo esto se usará más adelante (incluso lo que se podría hacer es dar un spoiler del proyecto), pero antes será necesario abordar algunos conceptos de ciencias de la computación, matemáticas e inteligencia artificial
+
+------------------------------ IA, redes neuronales y matemáticas ------------------------------
+- Podría hablarse muy poco de las bases de las ciencias de la computación
+- Definición de programación (la definición de: input -> proceso -> output)
+- Entrada y hablar sobre la inteligencia artificial
+- Buscar cómo conectar IA con Redes Neuronales
+- Hablar de Redes Neuronales
+  - Definición matemática
+- Buscar alternativas para redes neuronales
+- Buscar qué tanto me meteré a matemáticas (que sea lo más posible) (por lo menos veo que Tensores me servirán mucho, leer más de ellos)
+- Buscar modelos de redes neuronales y definirlas
+- Si no sale nada más, es momento de pasar al problema de investigación
+
+
+------------------------------ Habla imaginada ------------------------------
+- Investigar en general qué hay de Habla Imaginada
+
+------------------------------ Experimentación ------------------------------
+- Documentar el proceso de conexión y con el que se experimentará (básicamente lo que ya tengo hecho)
