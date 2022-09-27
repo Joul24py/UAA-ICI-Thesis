@@ -1,10 +1,6 @@
 ------------------------------ Neuroanatomía ------------------------------
 - Buscar más autores que definan los lóbulos del cerebro para discutir las definiciones
-- Hablar del lóbulo insular
-- Hablar del lóbulo límbico
-- Formar una definición concisa de cada lóbulo al discutir distintas definiciones de los lóbulos
-- Hablar de las divisiones funcionales de las que habla Wikipedia (https://es.wikipedia.org/wiki/Cerebro_humano) (buscar más autores) (incluso con esto puedo conectar de la macro a la micro)
-- Posteriormente hablar de la microarquitectura: entrar a las definiciones de neuronas por Wikipedia y por otros libros que he encontrado
+- Buscar más autores que definan las divisiones funcionales del cerebro para discutir las definiciones
 - Entrar a fondo con neuronas (https://es.wikipedia.org/wiki/Neurona):
   - Morfología
   - Funciones
