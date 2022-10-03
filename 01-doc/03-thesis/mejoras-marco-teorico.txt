@@ -1,11 +1,12 @@
 ------------------------------ Neuroanatomía ------------------------------
 - Buscar más autores que definan los lóbulos del cerebro para discutir las definiciones
 - Buscar más autores que definan las divisiones funcionales del cerebro para discutir las definiciones
+- Buscar más autores que definan las partes de una neurona para discutir las definiciones
 - Entrar a fondo con neuronas (https://es.wikipedia.org/wiki/Neurona):
-  - Morfología
-  - Funciones
-  - Interacción entre neuronas
-  - Clasificación
+  - Morfología				DONE
+  - Funciones				IN PROGRESS
+  - Interacción entre neuronas		NOT STARTED
+  - Clasificación			NOT STARTED
 - Hablar también de las conexiones sinápticas
 - Si no sale nada más, empezar a hacer una conexión entre la actividad neuronal y la electroencefalografía
 
