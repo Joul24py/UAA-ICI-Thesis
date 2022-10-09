@@ -3,13 +3,7 @@
 - Buscar más autores que definan las divisiones funcionales del cerebro para discutir las definiciones
 - Buscar más autores que definan las partes de una neurona para discutir las definiciones
 - Buscar más autores que definan las funciones neuronales para discutir las definiciones
-- Entrar a fondo con neuronas (https://es.wikipedia.org/wiki/Neurona):
-  - Morfología				DONE
-  - Funciones				DONE
-  - Interacción entre neuronas		NOT STARTED
-  - Clasificación			MAYBE NOT NECESSARY
-- Hablar también de las conexiones sinápticas
-- Si no sale nada más, empezar a hacer una conexión entre la actividad neuronal y la electroencefalografía
+- Buscar más autores que definan la interacción entre neuronas para discutir las definiciones
 
 ------------------------------ Electroencefalografía ------------------------------
 - Definición de electroencefalografía (https://es.wikipedia.org/wiki/Electroencefalograf%C3%ADa)
