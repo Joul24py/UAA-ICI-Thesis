@@ -42,3 +42,5 @@
 
 ------------------------------ Experimentación ------------------------------
 - Documentar el proceso de conexión y con el que se experimentará (básicamente lo que ya tengo hecho)
+- Para la experimentación será necesario hacer un script para crear el dataset del aprendizaje supervisado
+- Hay que investigar distintos modelos de aprendizaje y estudiarlos fuertemente
