@@ -38,6 +38,8 @@ def RunUpdateStream(xStop = 319, yStop = 60, xWindow = 319, yWindow = 8, timerRe
         pyautogui.moveTo(xStop, yStop)
         pyautogui.click()
         time.sleep(timerRefresher/2)
+    
+    return
 
 #%% Creating the dataset with the input data and the expected output
 def createDataset(xMaximize, yMaximize, xPlay, yPlay, xWindow, yWindow, xStop, yStop, profileName, expectedResult, rangeTime):
@@ -90,4 +92,28 @@ def createDataset(xMaximize, yMaximize, xPlay, yPlay, xWindow, yWindow, xStop, y
     # Remove the data.csv raw file
     os.remove('data.csv')
     
+    return
+
+#%% First AI model
+def SVM(profileName):
+    # Condition if profile or dataset doesn't exists
+    if(not(os.path.isfile('profiles/' + str(profileName) + '/dataset.csv'))):
+        print('User not found or dataset not created yet')
+        return
+    return
+
+#%% Second AI model
+def b(profileName):
+    # Condition if profile or dataset doesn't exists
+    if(not(os.path.isfile('profiles/' + str(profileName) + '/dataset.csv'))):
+        print('User not found or dataset not created yet')
+        return
+    return
+
+#%% Third AI model
+def c(profileName):
+    # Condition if profile or dataset doesn't exists
+    if(not(os.path.isfile('profiles/' + str(profileName) + '/dataset.csv'))):
+        print('User not found or dataset not created yet')
+        return
     return
