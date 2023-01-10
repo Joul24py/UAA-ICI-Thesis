@@ -1,8 +1,19 @@
 #%% Libraries
 import os
 import time
+import random
 import pyautogui
 import pandas
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.metrics import classification_report
+from sklearn.metrics import precision_score
+from sklearn.metrics import confusion_matrix
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import GaussianNB
 
 #%% Detect the position of the mouse
 def MousePosition(secs = 3):
@@ -47,7 +58,7 @@ def createDataset(xMaximize, yMaximize, xPlay, yPlay, xWindow, yWindow, xStop, y
     if(not(os.path.exists('profiles/' + str(profileName)))):
         os.makedirs('profiles/' + str(profileName))
     time.sleep(0.2)
-    
+    '''
     # Maximizing OpenViBE Designer
     pyautogui.moveTo(xMaximize, yMaximize)
     pyautogui.click()
@@ -67,7 +78,7 @@ def createDataset(xMaximize, yMaximize, xPlay, yPlay, xWindow, yWindow, xStop, y
     pyautogui.moveTo(xStop, yStop)
     pyautogui.click()
     time.sleep(0.5)
-    
+    '''
     # Loading data.csv
     dataframe = pandas.read_csv('data.csv')
     
@@ -100,20 +111,84 @@ def SVM(profileName):
     if(not(os.path.isfile('profiles/' + str(profileName) + '/dataset.csv'))):
         print('User not found or dataset not created yet')
         return
+    
+    # Support Vector Machine process
+    df = pandas.read_csv('profiles/' + str(profileName) + '/dataset.csv')
+    
+    X = df.drop(['Expected Output'], axis = 1)
+    Y = df['Expected Output']
+    
+    xtrain, xtest, ytrain, ytest = train_test_split(X, Y, test_size = 0.20)
+    
+    classifier = SVC(kernel = 'linear')
+    classifier.fit(xtrain, ytrain)
+    
+    ypred = classifier.predict(xtest)
+    print(ypred)
+    
+    print(classification_report(ytest, ypred))
+    
     return
 
 #%% Second AI model
-def b(profileName):
+def NaiveBayes(profileName):
     # Condition if profile or dataset doesn't exists
     if(not(os.path.isfile('profiles/' + str(profileName) + '/dataset.csv'))):
         print('User not found or dataset not created yet')
         return
+    
+    # Naive Bayes process
+    df = pandas.read_csv('profiles/' + str(profileName) + '/dataset.csv')
+
+    X = df.drop(['Expected Output'], axis = 1)
+    Y = df['Expected Output']
+
+    xtrain, xtest, ytrain, ytest = train_test_split(X, Y, test_size = 0.20)
+
+    classifier = GaussianNB()
+    classifier.fit(xtrain, ytrain)
+
+    ypred = classifier.predict(xtest)
+
+    matriz = confusion_matrix(ytest, ypred)
+    print('Matriz de Confusión')
+    print(matriz)
+
+    precision = precision_score(ytest, ypred, pos_label="a")
+    print('Precisión del modelo')
+    print(precision)
     return
 
 #%% Third AI model
-def c(profileName):
+def RandomForest(profileName):
     # Condition if profile or dataset doesn't exists
     if(not(os.path.isfile('profiles/' + str(profileName) + '/dataset.csv'))):
         print('User not found or dataset not created yet')
         return
+    
+    # Random Forest process
+    df = pandas.read_csv('profiles/' + str(profileName) + '/dataset.csv')
+
+    X = df.drop(['Expected Output'], axis = 1)
+    Y = df['Expected Output']
+
+    xtrain, xtest, ytrain, ytest = train_test_split(X, Y, test_size = 0.20)
+
+    sc = StandardScaler()
+    xtrain = sc.fit_transform(xtrain)
+    xtest = sc.fit_transform(xtest)
+
+    classifier = RandomForestClassifier(n_estimators = 4)
+    classifier.fit(xtrain, ytrain)
+
+    ypred = classifier.predict(xtest)
+
+    matriz = confusion_matrix(ytest, ypred)
+    print('Matriz de Confusión')
+    print(matriz)
+
+    precision = precision_score(ytest, ypred, pos_label="a")
+    print('Precisión del modelo')
+    print(precision)
+    
     return
