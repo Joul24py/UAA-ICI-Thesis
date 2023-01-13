@@ -15,11 +15,12 @@
 ------------------------------ IA, redes neuronales y matemáticas ------------------------------
 - Buscar más autores que definan la computación y programación para discutir las definiciones
 - Buscar más autores que definan lo citado por Joyanes Aquilar (el software, lenguajes de programación, algoritmos, representación de algoritmos) para discutir las definiciones
-- Entrada y hablar sobre la inteligencia artificial
-- Introducción al Machine Learning
-- Buscar definiciones de Machine Learning
-- Introducción al Aprendizaje Supervisado
-- Buscar definiciones de Aprendizaje Supervisado
+- Buscar más autores que definan IA
+- Buscar más autores que definan Aprendizaje Automático
+- Buscar más autores que definan Aprendizaje supervisado
+- Buscar más autores que definan Aprendizaje no supervisado
+- Buscar más autores que definan Aprendizaje por refuerzo
+
 - Buscar definiciones de SVM
 - Buscar definiciones de Random Forest
 - Buscar definiciones de Naive Bayes
