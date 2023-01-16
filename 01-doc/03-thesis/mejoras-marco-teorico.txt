@@ -20,10 +20,11 @@
 - Buscar más autores que definan Aprendizaje supervisado
 - Buscar más autores que definan Aprendizaje no supervisado
 - Buscar más autores que definan Aprendizaje por refuerzo
+- Buscar más definiciones de SVM
+- Buscar más definiciones de Random Forest
+- Buscar más definiciones de Naive Bayes
+! Incluir para los 3 modelos las ecuaciones que los definen
 
-- Buscar definiciones de SVM
-- Buscar definiciones de Random Forest
-- Buscar definiciones de Naive Bayes
 - Si no sale nada más, es momento de pasar al problema de investigación
 
 ------------------------------ Habla imaginada ------------------------------
