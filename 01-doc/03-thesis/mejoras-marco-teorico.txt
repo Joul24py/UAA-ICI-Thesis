@@ -23,9 +23,6 @@
 - Buscar más definiciones de SVM
 - Buscar más definiciones de Random Forest
 - Buscar más definiciones de Naive Bayes
-! Incluir para los 3 modelos las ecuaciones que los definen
-
-- Si no sale nada más, es momento de pasar al problema de investigación
 
 ------------------------------ Habla imaginada ------------------------------
 - Investigar en general qué hay de Habla Imaginada
