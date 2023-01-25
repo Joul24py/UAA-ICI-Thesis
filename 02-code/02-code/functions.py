@@ -154,7 +154,7 @@ def NaiveBayes(profileName):
     print('Matriz de Confusión')
     print(matriz)
 
-    precision = precision_score(ytest, ypred, pos_label="a")
+    precision = precision_score(ytest, ypred, pos_label="a", average=None)
     print('Precisión del modelo')
     print(precision)
     return
@@ -187,7 +187,7 @@ def RandomForest(profileName):
     print('Matriz de Confusión')
     print(matriz)
 
-    precision = precision_score(ytest, ypred, pos_label="a")
+    precision = precision_score(ytest, ypred, pos_label="a", average=None)
     print('Precisión del modelo')
     print(precision)
     
