@@ -6,11 +6,10 @@
 - Buscar más autores que definan la interacción entre neuronas para discutir las definiciones
 
 ------------------------------ Electroencefalografía ------------------------------
-- Definición de electroencefalografía (https://es.wikipedia.org/wiki/Electroencefalograf%C3%ADa)
-- Hablar de la actividad de fondo (u ondas encefálicas o eeg waves)
-- Hablar de los métodos de activación encefálica
+- Buscar más autores que definan electroencefalografía
+- Buscar más autores que definan la actividad de fondo (u ondas encefálicas o eeg waves)
+- Buscar más autores que definan métodos de activación encefálica
 - Hablar de dispositivos con los que pueden hacerse estos estudios
-- Si no sale nada más, comentar que todo esto se usará más adelante (incluso lo que se podría hacer es dar un spoiler del proyecto), pero antes será necesario abordar algunos conceptos de ciencias de la computación, matemáticas e inteligencia artificial
 
 ------------------------------ IA, redes neuronales y matemáticas ------------------------------
 - Buscar más autores que definan la computación y programación para discutir las definiciones
@@ -25,7 +24,7 @@
 - Buscar más definiciones de Naive Bayes
 
 ------------------------------ Habla imaginada ------------------------------
-- Investigar en general qué hay de Habla Imaginada
+- Hablar de Habla Imaginada (https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0188-95322013000100002)
 
 ------------------------------ Experimentación ------------------------------
 - Documentar el proceso de conexión y con el que se experimentará (básicamente lo que ya tengo hecho)
