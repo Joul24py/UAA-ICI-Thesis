@@ -10,6 +10,7 @@
 - Buscar más autores que definan la actividad de fondo (u ondas encefálicas o eeg waves)
 - Buscar más autores que definan métodos de activación encefálica
 - Hablar de dispositivos con los que pueden hacerse estos estudios
+- Hablar de BCIs
 
 ------------------------------ IA, redes neuronales y matemáticas ------------------------------
 - Buscar más autores que definan la computación y programación para discutir las definiciones
@@ -23,10 +24,9 @@
 - Buscar más definiciones de Random Forest
 - Buscar más definiciones de Naive Bayes
 
------------------------------- Habla imaginada ------------------------------
+------------------------------ Habla imaginada (almost done) ------------------------------
 - Hablar de Habla Imaginada (https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0188-95322013000100002)
 
 ------------------------------ Experimentación ------------------------------
-- Documentar el proceso de conexión y con el que se experimentará (básicamente lo que ya tengo hecho)
-- Para la experimentación será necesario hacer un script para crear el dataset del aprendizaje supervisado
-- Hay que investigar distintos modelos de aprendizaje y estudiarlos fuertemente
+- Necesito imprimir los acuerdos de privacidad
+- Obtener los datos y documentar todo esto
