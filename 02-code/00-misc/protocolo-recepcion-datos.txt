@@ -1,0 +1,21 @@
+Protocolo de recolección de datos:
+
+1. Preparar en una tasa una solución salina con agua y sal 
+2. Mojar los nodos con la jeringa y acomodarlos en la diadema
+3. Acomodar la diadema en el usuario
+4. Conectar el USB y revisar con EMOTIV si está correctamente acomodada, sino, hacer las correcciones
+5. Preparar Cykit y OpenViBE
+6. Ejecutar el código de Python
+
+Van a haber dos evaluaciones. Una con conceptos más aterrizados y otra más abstracta
+La primera involucrará 15 segundos de cada uno de los siguientes conceptos:
+- Rojo
+- Amarillo
+- Verde
+- Azul
+
+La segunda involucrará los conceptos:
+- Mover el mouse hacia arriba
+- Mover el mouse hacia la derecha
+- Mover el mouse hacia abajo
+- Mover el mouse hacia la izquierda
