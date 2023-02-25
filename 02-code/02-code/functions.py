@@ -58,7 +58,7 @@ def createDataset(xMaximize, yMaximize, xPlay, yPlay, xWindow, yWindow, xStop, y
     if(not(os.path.exists('profiles/' + str(profileName)))):
         os.makedirs('profiles/' + str(profileName))
     time.sleep(0.2)
-    '''
+    
     # Maximizing OpenViBE Designer
     pyautogui.moveTo(xMaximize, yMaximize)
     pyautogui.click()
@@ -78,7 +78,7 @@ def createDataset(xMaximize, yMaximize, xPlay, yPlay, xWindow, yWindow, xStop, y
     pyautogui.moveTo(xStop, yStop)
     pyautogui.click()
     time.sleep(0.5)
-    '''
+    
     # Loading data.csv
     dataframe = pandas.read_csv('data.csv')
     
@@ -90,7 +90,7 @@ def createDataset(xMaximize, yMaximize, xPlay, yPlay, xWindow, yWindow, xStop, y
     dataframe = dataframe.drop(labels='Event Duration', axis=1)
     
     # Add a column with the expected output
-    dataframe.insert(16, "Expected Output", [expectedResult]*len(dataframe))
+    dataframe.insert(14, "Expected Output", [expectedResult]*len(dataframe))
     
     # Append (or create) the dataset of this selected profile
     if(not(os.path.isfile('profiles/' + str(profileName) + '/dataset.csv'))):
