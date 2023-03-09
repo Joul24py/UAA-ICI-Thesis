@@ -1,8 +1,0 @@
-Protocolo para darle a la tesina:
-
-El docx donde estoy escribiendo el documento
-El txt donde tengo las mejoras para hacerle al documento
-Un Git Bash para registrar los cambios del día (opcional)
-Un VS Code Markdown para ver los cambios (opcional)
-Weava para ver lo que he resaltado y ya no puedo utilizar de teoría
-Notion para ver el índice de contenidos
