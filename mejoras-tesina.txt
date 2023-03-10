@@ -31,5 +31,5 @@ Refinar la introducción
 - Hablar de Habla Imaginada (https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0188-95322013000100002)
 
 ------------------------------ Experimentación ------------------------------
-- Necesito imprimir los acuerdos de privacidad
-- Obtener los datos y documentar todo esto
+- En Experimentación y Pruebas hay que narrar cómo fue la experimenación de campo
+- En obtención y procesamiento de datos hay que insertar el dataset en bruto y narrar que habrá que aplicar normalización Z
