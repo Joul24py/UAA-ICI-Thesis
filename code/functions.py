@@ -165,6 +165,7 @@ def NaiveBayes(profileName):
     precision = precision_score(ytest, ypred, pos_label="a", average=None)
     print('Precisión del modelo')
     print(precision)
+    
     return
 
 #%% Third AI model
@@ -199,4 +200,47 @@ def RandomForest(profileName):
     print('Precisión del modelo')
     print(precision)
     
+    return
+
+#%% Getting every precision value
+def runModels():
+    folder = "C:\\Users\\alexe\\OneDrive - Universidad Autónoma de Aguascalientes\\Joul\\Escolar\\3 ICI\\Tesina\\09no-Parcial2\\02-repo\\UAA-ICI-Thesis\\code\\profiles"
+    resultsFile = open("results.txt", 'w')
+    resultsFile.write("SVM\n\n")
+    print("SVM")
+    
+    for i in os.walk(folder):
+        if(len(i[1]) > 0):
+            continue
+        resultsFile.write(i[0][142:] + "\n")
+        print("Usuario: " + i[0][142:])
+        result = SVM(i[0][142:])
+        resultsFile.write(result + "\n")
+        print("Iteración: " + str(i + 1))
+    
+    resultsFile.write("Naive Bayes\n\n")
+    print("Naive Bayes")
+    
+    for i in os.walk(folder):
+        if(len(i[1]) > 0):
+            continue
+        resultsFile.write(i[0][142:] + "\n")
+        print("Usuario: " + i[0][142:])
+        result = NaiveBayes(i[0][142:])
+        resultsFile.write(result + "\n")
+        print("Iteración: " + str(i + 1))
+    
+    resultsFile.write("Random Forest\n\n")
+    print("Random Forest")
+    
+    for i in os.walk(folder):
+        if(len(i[1]) > 0):
+            continue
+        resultsFile.write(i[0][142:] + "\n")
+        print("Usuario: " + i[0][142:])
+        result = RandomForest(i[0][142:])
+        resultsFile.write(result + "\n")
+        print("Iteración: " + str(i + 1))
+    
+    resultsFile.close()
     return
