@@ -14,6 +14,67 @@ from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import GaussianNB
+from scipy.stats import zscore
+import sklearn.exceptions
+import warnings
+
+warnings.filterwarnings("ignore", category=sklearn.exceptions.UndefinedMetricWarning)
+
+#%% Whole profile
+AllProfiles = ['joul1',
+'pep1',
+'mom1',
+'dad1',
+'Roman1',
+'Hiram1',
+'Meli1',
+'Oscar1',
+'Bere1',
+'Andy1',
+'Montse1',
+'Abraham1',
+'Valeria1',
+'Juliett1',
+'Gus1',
+'Alex1',
+'Meza1',
+'Fer1',
+'Eloy1',
+'Jorge2do1',
+'Diego2do1',
+'Raul2do1',
+'Padilla1',
+'Yissel1',
+'Daniela1',
+'Isabela1',
+'Yolanda1',
+'joul2',
+'pep2',
+'mom2',
+'dad2',
+'Roman2',
+'Hiram2',
+'Meli2',
+'Oscar2',
+'Bere2',
+'Andy2',
+'Montse2',
+'Abraham2',
+'Valeria2',
+'Juliett2',
+'Gus2',
+'Alex2',
+'Meza2',
+'Fer2',
+'Eloy2',
+'Jorge2do2',
+'Diego2do2',
+'Raul2do2',
+'Padilla2',
+'Yissel2',
+'Daniela2',
+'Isabela2',
+'Yolanda2']
 
 #%% Detect the position of the mouse
 def MousePosition(secs = 3):
@@ -108,12 +169,12 @@ def createDataset(xMaximize, yMaximize, xPlay, yPlay, xWindow, yWindow, xStop, y
 #%% First AI model
 def SVM(profileName):
     # Condition if profile or dataset doesn't exists
-    if(not(os.path.isfile('profiles/' + str(profileName) + '/dataset.csv'))):
+    if(not(os.path.isfile('normz/' + str(profileName) + '/dataset.csv'))):
         print('User not found or dataset not created yet')
         return
     
     # Support Vector Machine process
-    df = pandas.read_csv('profiles/' + str(profileName) + '/dataset.csv')
+    df = pandas.read_csv('normz/' + str(profileName) + '/dataset.csv')
     
     X = df.drop(['Expected Output'], axis = 1)
     Y = df['Expected Output']
@@ -136,17 +197,17 @@ def SVM(profileName):
     print('Precisión del modelo')
     print(precision)
     
-    return
+    return precision
 
 #%% Second AI model
 def NaiveBayes(profileName):
     # Condition if profile or dataset doesn't exists
-    if(not(os.path.isfile('profiles/' + str(profileName) + '/dataset.csv'))):
+    if(not(os.path.isfile('normz/' + str(profileName) + '/dataset.csv'))):
         print('User not found or dataset not created yet')
         return
     
     # Naive Bayes process
-    df = pandas.read_csv('profiles/' + str(profileName) + '/dataset.csv')
+    df = pandas.read_csv('normz/' + str(profileName) + '/dataset.csv')
 
     X = df.drop(['Expected Output'], axis = 1)
     Y = df['Expected Output']
@@ -166,17 +227,17 @@ def NaiveBayes(profileName):
     print('Precisión del modelo')
     print(precision)
     
-    return
+    return precision
 
 #%% Third AI model
 def RandomForest(profileName):
     # Condition if profile or dataset doesn't exists
-    if(not(os.path.isfile('profiles/' + str(profileName) + '/dataset.csv'))):
+    if(not(os.path.isfile('normz/' + str(profileName) + '/dataset.csv'))):
         print('User not found or dataset not created yet')
         return
     
     # Random Forest process
-    df = pandas.read_csv('profiles/' + str(profileName) + '/dataset.csv')
+    df = pandas.read_csv('normz/' + str(profileName) + '/dataset.csv')
 
     X = df.drop(['Expected Output'], axis = 1)
     Y = df['Expected Output']
@@ -200,47 +261,136 @@ def RandomForest(profileName):
     print('Precisión del modelo')
     print(precision)
     
-    return
+    return precision
 
 #%% Getting every precision value
-def runModels():
-    folder = "C:\\Users\\alexe\\OneDrive - Universidad Autónoma de Aguascalientes\\Joul\\Escolar\\3 ICI\\Tesina\\09no-Parcial2\\02-repo\\UAA-ICI-Thesis\\code\\profiles"
+def runModels(users):
     resultsFile = open("results.txt", 'w')
     resultsFile.write("SVM\n\n")
     print("SVM")
     
-    for i in os.walk(folder):
-        if(len(i[1]) > 0):
-            continue
-        resultsFile.write(i[0][142:] + "\n")
-        print("Usuario: " + i[0][142:])
-        result = SVM(i[0][142:])
-        resultsFile.write(result + "\n")
-        print("Iteración: " + str(i + 1))
+    for i in users:
+        resultsFile.write(i + "\n")
+        print("Usuario: " + i)
+        for j in range(5):
+            print("Iteración: " + str(j + 1))
+            result = SVM(i)
+            resultsFile.write(str(result) + "\n")
+        resultsFile.write("\n")
     
     resultsFile.write("Naive Bayes\n\n")
     print("Naive Bayes")
     
-    for i in os.walk(folder):
-        if(len(i[1]) > 0):
-            continue
-        resultsFile.write(i[0][142:] + "\n")
-        print("Usuario: " + i[0][142:])
-        result = NaiveBayes(i[0][142:])
-        resultsFile.write(result + "\n")
-        print("Iteración: " + str(i + 1))
+    for i in users:
+        resultsFile.write(i + "\n")
+        print("Usuario: " + i)
+        for j in range(5):
+            print("Iteración: " + str(j + 1))
+            result = NaiveBayes(i)
+            resultsFile.write(str(result) + "\n")
+        resultsFile.write("\n")
     
     resultsFile.write("Random Forest\n\n")
     print("Random Forest")
     
-    for i in os.walk(folder):
-        if(len(i[1]) > 0):
-            continue
-        resultsFile.write(i[0][142:] + "\n")
-        print("Usuario: " + i[0][142:])
-        result = RandomForest(i[0][142:])
-        resultsFile.write(result + "\n")
-        print("Iteración: " + str(i + 1))
+    for i in users:
+        resultsFile.write(i + "\n")
+        print("Usuario: " + i)
+        for j in range(5):
+            print("Iteración: " + str(j + 1))
+            result = RandomForest(i)
+            resultsFile.write(str(result) + "\n")
+        resultsFile.write("\n")
     
     resultsFile.close()
+    return
+
+#%% Z-Normalization
+def NormZ(profileName):
+    for i in profileName:
+        # Condition if profile or dataset doesn't exists
+        if(not(os.path.isfile('normz/' + str(i) + '/dataset.csv'))):
+            print('User not found or dataset not created yet')
+            return
+        
+        # Z-Normalization
+        df = pandas.read_csv('normz/' + str(i) + '/dataset.csv')
+        
+        df['Channel 1'] = zscore(df['Channel 1'])
+        df['Channel 2'] = zscore(df['Channel 2'])
+        df['Channel 3'] = zscore(df['Channel 3'])
+        df['Channel 4'] = zscore(df['Channel 4'])
+        df['Channel 5'] = zscore(df['Channel 5'])
+        df['Channel 6'] = zscore(df['Channel 6'])
+        df['Channel 7'] = zscore(df['Channel 7'])
+        df['Channel 8'] = zscore(df['Channel 8'])
+        df['Channel 9'] = zscore(df['Channel 9'])
+        df['Channel 10'] = zscore(df['Channel 10'])
+        df['Channel 11'] = zscore(df['Channel 11'])
+        df['Channel 12'] = zscore(df['Channel 12'])
+        df['Channel 13'] = zscore(df['Channel 13'])
+        df['Channel 14'] = zscore(df['Channel 14'])
+        
+        df.to_csv('normz/' + str(i) + '/dataset.csv', index = False)
+    
+    return
+
+#%% Fourier Transformation
+def Fourier(profileName):
+    for i in profileName:
+        # Condition if profile or dataset doesn't exists
+        if(not(os.path.isfile('fourier/' + str(i) + '/dataset.csv'))):
+            print('User not found or dataset not created yet')
+            return
+        
+        # Z-Normalization
+        df = pandas.read_csv('fourier/' + str(i) + '/dataset.csv')
+        
+        channel1 = np.array(df['Channel 1'])
+        channel2 = np.array(df['Channel 2'])
+        channel3 = np.array(df['Channel 3'])
+        channel4 = np.array(df['Channel 4'])
+        channel5 = np.array(df['Channel 5'])
+        channel6 = np.array(df['Channel 6'])
+        channel7 = np.array(df['Channel 7'])
+        channel8 = np.array(df['Channel 8'])
+        channel9 = np.array(df['Channel 9'])
+        channel10 = np.array(df['Channel 10'])
+        channel11 = np.array(df['Channel 11'])
+        channel12 = np.array(df['Channel 12'])
+        channel13 = np.array(df['Channel 13'])
+        channel14 = np.array(df['Channel 14'])
+        
+        transform1 = np.fft.fft(channel1)
+        transform2 = np.fft.fft(channel2)
+        transform3 = np.fft.fft(channel3)
+        transform4 = np.fft.fft(channel4)
+        transform5 = np.fft.fft(channel5)
+        transform6 = np.fft.fft(channel6)
+        transform7 = np.fft.fft(channel7)
+        transform8 = np.fft.fft(channel8)
+        transform9 = np.fft.fft(channel9)
+        transform10 = np.fft.fft(channel10)
+        transform11 = np.fft.fft(channel11)
+        transform12 = np.fft.fft(channel12)
+        transform13 = np.fft.fft(channel13)
+        transform14 = np.fft.fft(channel14)
+        
+        df['Channel 1'] = transform1
+        df['Channel 2'] = transform2
+        df['Channel 3'] = transform3
+        df['Channel 4'] = transform4
+        df['Channel 5'] = transform5
+        df['Channel 6'] = transform6
+        df['Channel 7'] = transform7
+        df['Channel 8'] = transform8
+        df['Channel 9'] = transform9
+        df['Channel 10'] = transform10
+        df['Channel 11'] = transform11
+        df['Channel 12'] = transform12
+        df['Channel 13'] = transform13
+        df['Channel 14'] = transform14
+        
+        df.to_csv('fourier/' + str(i) + '/dataset.csv', index = False)
+    
     return
