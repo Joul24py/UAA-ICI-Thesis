@@ -1,7 +1,5 @@
------------------------------- Introducción ------------------------------
-Refinar la introducción
-
 ------------------------------ Neuroanatomía ------------------------------
+- Buscar más autores que definan al cerebro para discutir las definiciones
 - Buscar más autores que definan los lóbulos del cerebro para discutir las definiciones
 - Buscar más autores que definan las divisiones funcionales del cerebro para discutir las definiciones
 - Buscar más autores que definan las partes de una neurona para discutir las definiciones
@@ -26,10 +24,16 @@ Refinar la introducción
 - Buscar más definiciones de SVM
 - Buscar más definiciones de Random Forest
 - Buscar más definiciones de Naive Bayes
+- Hablar de la importancia del preprocesamiento de datos
+- Hablar de la Normalización Z
+- Hablar de la transformación de Fourier y números complejos (uso del enfoque basado en magnitud y fase como input para fourier)
 
 ------------------------------ Habla imaginada (almost done) ------------------------------
-- Hablar de Habla Imaginada (https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0188-95322013000100002)
+- Si se encuentra más info, hablar más de Habla Imaginada (https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0188-95322013000100002)
+! Hablar de Intención del Movimiento
 
 ------------------------------ Experimentación ------------------------------
-- En Experimentación y Pruebas hay que narrar cómo fue la experimenación de campo
-- En obtención y procesamiento de datos hay que insertar el dataset en bruto y narrar que habrá que aplicar normalización Z
+! En Experimentación y Pruebas hay que narrar cómo fue la experimenación de campo
+! En obtención y procesamiento de datos hay que insertar el dataset en bruto y narrar que habrá que aplicar normalización Z
+! Hay que actualizar el código de functions.py que he añadido
+! Documenta bien todo el proceso de Python y ejecuciones y todo >:v

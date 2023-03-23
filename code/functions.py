@@ -1,4 +1,6 @@
 #%% Libraries
+import math
+import cmath
 import os
 import time
 import random
@@ -21,10 +23,11 @@ import warnings
 warnings.filterwarnings("ignore", category=sklearn.exceptions.UndefinedMetricWarning)
 
 #%% Whole profile
-AllProfiles = ['joul1',
-'pep1',
-'mom1',
-'dad1',
+AllProfiles = [
+#'joul1',
+#'pep1',
+#'mom1',
+#'dad1',
 'Roman1',
 'Hiram1',
 'Meli1',
@@ -48,7 +51,7 @@ AllProfiles = ['joul1',
 'Daniela1',
 'Isabela1',
 'Yolanda1',
-'joul2',
+#'joul2',
 'pep2',
 'mom2',
 'dad2',
@@ -169,12 +172,12 @@ def createDataset(xMaximize, yMaximize, xPlay, yPlay, xWindow, yWindow, xStop, y
 #%% First AI model
 def SVM(profileName):
     # Condition if profile or dataset doesn't exists
-    if(not(os.path.isfile('normz/' + str(profileName) + '/dataset.csv'))):
+    if(not(os.path.isfile('fourierEMF/' + str(profileName) + '/dataset.csv'))):
         print('User not found or dataset not created yet')
         return
     
     # Support Vector Machine process
-    df = pandas.read_csv('normz/' + str(profileName) + '/dataset.csv')
+    df = pandas.read_csv('fourierEMF/' + str(profileName) + '/dataset.csv')
     
     X = df.drop(['Expected Output'], axis = 1)
     Y = df['Expected Output']
@@ -202,12 +205,12 @@ def SVM(profileName):
 #%% Second AI model
 def NaiveBayes(profileName):
     # Condition if profile or dataset doesn't exists
-    if(not(os.path.isfile('normz/' + str(profileName) + '/dataset.csv'))):
+    if(not(os.path.isfile('fourierEMF/' + str(profileName) + '/dataset.csv'))):
         print('User not found or dataset not created yet')
         return
     
     # Naive Bayes process
-    df = pandas.read_csv('normz/' + str(profileName) + '/dataset.csv')
+    df = pandas.read_csv('fourierEMF/' + str(profileName) + '/dataset.csv')
 
     X = df.drop(['Expected Output'], axis = 1)
     Y = df['Expected Output']
@@ -232,12 +235,12 @@ def NaiveBayes(profileName):
 #%% Third AI model
 def RandomForest(profileName):
     # Condition if profile or dataset doesn't exists
-    if(not(os.path.isfile('normz/' + str(profileName) + '/dataset.csv'))):
+    if(not(os.path.isfile('fourierEMF/' + str(profileName) + '/dataset.csv'))):
         print('User not found or dataset not created yet')
         return
     
     # Random Forest process
-    df = pandas.read_csv('normz/' + str(profileName) + '/dataset.csv')
+    df = pandas.read_csv('fourierEMF/' + str(profileName) + '/dataset.csv')
 
     X = df.drop(['Expected Output'], axis = 1)
     Y = df['Expected Output']
@@ -276,8 +279,11 @@ def runModels(users):
             print("Iteración: " + str(j + 1))
             result = SVM(i)
             resultsFile.write(str(result) + "\n")
+            resultsFile.close()
+            resultsFile = open("results.txt", 'a')
         resultsFile.write("\n")
     
+    '''
     resultsFile.write("Naive Bayes\n\n")
     print("Naive Bayes")
     
@@ -288,6 +294,8 @@ def runModels(users):
             print("Iteración: " + str(j + 1))
             result = NaiveBayes(i)
             resultsFile.write(str(result) + "\n")
+            resultsFile.close()
+            resultsFile = open("results.txt", 'a')
         resultsFile.write("\n")
     
     resultsFile.write("Random Forest\n\n")
@@ -300,8 +308,10 @@ def runModels(users):
             print("Iteración: " + str(j + 1))
             result = RandomForest(i)
             resultsFile.write(str(result) + "\n")
+            resultsFile.close()
+            resultsFile = open("results.txt", 'a')
         resultsFile.write("\n")
-    
+    '''
     resultsFile.close()
     return
 
@@ -343,7 +353,7 @@ def Fourier(profileName):
             print('User not found or dataset not created yet')
             return
         
-        # Z-Normalization
+        # Fourier Transformation
         df = pandas.read_csv('fourier/' + str(i) + '/dataset.csv')
         
         channel1 = np.array(df['Channel 1'])
@@ -393,4 +403,137 @@ def Fourier(profileName):
         
         df.to_csv('fourier/' + str(i) + '/dataset.csv', index = False)
     
+    return
+
+#%% Fourier Transformation (approach based on magnitude and phase)
+def FourierEMF(profileName):
+    for i in profileName:
+        # Condition if profile or dataset doesn't exists
+        if(not(os.path.isfile('fourierEMF/' + str(i) + '/dataset.csv'))):
+            print('User not found or dataset not created yet')
+            return
+        
+        # Application of the approach
+        print(i)
+        
+        df = pandas.read_csv('fourierEMF/' + str(i) + '/dataset.csv')
+        channel1m = []
+        channel1f = []
+        channel2m = []
+        channel2f = []
+        channel3m = []
+        channel3f = []
+        channel4m = []
+        channel4f = []
+        channel5m = []
+        channel5f = []
+        channel6m = []
+        channel6f = []
+        channel7m = []
+        channel7f = []
+        channel8m = []
+        channel8f = []
+        channel9m = []
+        channel9f = []
+        channel10m = []
+        channel10f = []
+        channel11m = []
+        channel11f = []
+        channel12m = []
+        channel12f = []
+        channel13m = []
+        channel13f = []
+        channel14m = []
+        channel14f = []
+        for j in range(len(df['Expected Output'])):
+            channel1 = complex(df['Channel 1'][j])
+            channel2 = complex(df['Channel 2'][j])
+            channel3 = complex(df['Channel 3'][j])
+            channel4 = complex(df['Channel 4'][j])
+            channel5 = complex(df['Channel 5'][j])
+            channel6 = complex(df['Channel 6'][j])
+            channel7 = complex(df['Channel 7'][j])
+            channel8 = complex(df['Channel 8'][j])
+            channel9 = complex(df['Channel 9'][j])
+            channel10 = complex(df['Channel 10'][j])
+            channel11 = complex(df['Channel 11'][j])
+            channel12 = complex(df['Channel 12'][j])
+            channel13 = complex(df['Channel 13'][j])
+            channel14 = complex(df['Channel 14'][j])
+            
+            channel1m.append(math.sqrt((channel1.real ** 2) + (channel1.imag ** 2)))
+            channel2m.append(math.sqrt((channel2.real ** 2) + (channel2.imag ** 2)))
+            channel3m.append(math.sqrt((channel3.real ** 2) + (channel3.imag ** 2)))
+            channel4m.append(math.sqrt((channel4.real ** 2) + (channel4.imag ** 2)))
+            channel5m.append(math.sqrt((channel5.real ** 2) + (channel5.imag ** 2)))
+            channel6m.append(math.sqrt((channel6.real ** 2) + (channel6.imag ** 2)))
+            channel7m.append(math.sqrt((channel7.real ** 2) + (channel7.imag ** 2)))
+            channel8m.append(math.sqrt((channel8.real ** 2) + (channel8.imag ** 2)))
+            channel9m.append(math.sqrt((channel9.real ** 2) + (channel9.imag ** 2)))
+            channel10m.append(math.sqrt((channel10.real ** 2) + (channel10.imag ** 2)))
+            channel11m.append(math.sqrt((channel11.real ** 2) + (channel11.imag ** 2)))
+            channel12m.append(math.sqrt((channel12.real ** 2) + (channel12.imag ** 2)))
+            channel13m.append(math.sqrt((channel13.real ** 2) + (channel13.imag ** 2)))
+            channel14m.append(math.sqrt((channel14.real ** 2) + (channel14.imag ** 2)))
+            
+            channel1f.append(cmath.phase(channel1))
+            channel2f.append(cmath.phase(channel2))
+            channel3f.append(cmath.phase(channel3))
+            channel4f.append(cmath.phase(channel4))
+            channel5f.append(cmath.phase(channel5))
+            channel6f.append(cmath.phase(channel6))
+            channel7f.append(cmath.phase(channel7))
+            channel8f.append(cmath.phase(channel8))
+            channel9f.append(cmath.phase(channel9))
+            channel10f.append(cmath.phase(channel10))
+            channel11f.append(cmath.phase(channel11))
+            channel12f.append(cmath.phase(channel12))
+            channel13f.append(cmath.phase(channel13))
+            channel14f.append(cmath.phase(channel14))
+        
+        df['Channel 1 M'] =  channel1m
+        df['Channel 1 F'] = channel1f
+        df['Channel 2 M'] =  channel2m
+        df['Channel 2 F'] = channel2f
+        df['Channel 3 M'] =  channel3m
+        df['Channel 3 F'] = channel3f
+        df['Channel 4 M'] =  channel4m
+        df['Channel 4 F'] = channel4f
+        df['Channel 5 M'] =  channel5m
+        df['Channel 5 F'] = channel5f
+        df['Channel 6 M'] =  channel6m
+        df['Channel 6 F'] = channel6f
+        df['Channel 7 M'] =  channel7m
+        df['Channel 7 F'] = channel7f
+        df['Channel 8 M'] =  channel8m
+        df['Channel 8 F'] = channel8f
+        df['Channel 9 M'] =  channel9m
+        df['Channel 9 F'] = channel9f
+        df['Channel 10 M'] =  channel10m
+        df['Channel 10 F'] = channel10f
+        df['Channel 11 M'] =  channel11m
+        df['Channel 11 F'] = channel11f
+        df['Channel 12 M'] =  channel12m
+        df['Channel 12 F'] = channel12f
+        df['Channel 13 M'] =  channel13m
+        df['Channel 13 F'] = channel13f
+        df['Channel 14 M'] =  channel14m
+        df['Channel 14 F'] = channel14f
+        
+        df = df.drop(['Channel 1'], axis = 1)
+        df = df.drop(['Channel 2'], axis = 1)
+        df = df.drop(['Channel 3'], axis = 1)
+        df = df.drop(['Channel 4'], axis = 1)
+        df = df.drop(['Channel 5'], axis = 1)
+        df = df.drop(['Channel 6'], axis = 1)
+        df = df.drop(['Channel 7'], axis = 1)
+        df = df.drop(['Channel 8'], axis = 1)
+        df = df.drop(['Channel 9'], axis = 1)
+        df = df.drop(['Channel 10'], axis = 1)
+        df = df.drop(['Channel 11'], axis = 1)
+        df = df.drop(['Channel 12'], axis = 1)
+        df = df.drop(['Channel 13'], axis = 1)
+        df = df.drop(['Channel 14'], axis = 1)
+        
+        df.to_csv('fourierEMF/' + str(i) + '/dataset.csv', index = False)
     return
