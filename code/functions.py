@@ -205,7 +205,7 @@ def SVM(profileName):
 #%% Second AI model
 def NaiveBayes(profileName):
     # Condition if profile or dataset doesn't exists
-    if(not(os.path.isfile('fourierEMF/' + str(profileName) + '/dataset.csv'))):
+    if(not(os.path.isfile('profiles/' + str(profileName) + '/dataset.csv'))):
         print('User not found or dataset not created yet')
         return
     

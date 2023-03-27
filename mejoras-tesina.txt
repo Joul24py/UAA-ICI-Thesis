@@ -1,5 +1,0 @@
------------------------------- Experimentación ------------------------------
-! En Experimentación y Pruebas hay que narrar cómo fue la experimenación de campo
-! En obtención y procesamiento de datos hay que insertar el dataset en bruto y narrar que habrá que aplicar normalización Z
-! Hay que actualizar el código de functions.py que he añadido
-! Documenta bien todo el proceso de Python y ejecuciones y todo >:v
