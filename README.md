@@ -1,6 +1,8 @@
 # UAA-ICI-Thesis
 Undergraduate thesis repository of my career ICI studied at the UAA
 
+Online dataset collected during this project can be found [here](https://www.kaggle.com/datasets/joulespinozasanchez/emotiv-epoc-data-extraction)
+
 ---
 
 **Abstract:**
@@ -100,7 +102,7 @@ The following graph shows the methodology used in this investigation:
 
 ### Development
 
-The data capture, evidence from field experimentation, and a detailed description of the results are found in the attached document. To avoid further increasing the size of this repository introduction, only the result graphs obtained from the procedure of this research are included.
+The data capture, evidence from field experimentation, and a detailed description of the results are found in the attached document. Also, the online dataset collected during this project can be found [here](https://www.kaggle.com/datasets/joulespinozasanchez/emotiv-epoc-data-extraction). To avoid further increasing the size of this repository introduction, only the result graphs obtained from the procedure of this research are included.
 
 The following are the average efficiency results along with the dispersion obtained by each model in each stage of the experimentation: using raw data, normalized data, and transformed data.
 
